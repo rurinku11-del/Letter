@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amar Priyo... ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Indie+Flower&family=Poppins:wght@300;400;600&display=swap');
+
+:root{
+--pink:#ff85a1;
+--dark-pink:#ff4d6d;
+--gold:#ffd700;
+}
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+padding:15px;
+background:linear-gradient(-45deg,#ffeef2,#ffd1dc,#fff1f1,#ffe4e1);
+background-size:400% 400%;
+animation:gradientBG 15s ease infinite;
+font-family:'Poppins',sans-serif;
+overflow-x:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+}
+
+@keyframes gradientBG{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+/* Sakura */
+.sakura{
+position:fixed;
+top:-10%;
+z-index:1000;
+pointer-events:none;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(0) rotate(0deg);
+opacity:1;
+}
+100%{
+transform:translateY(110vh) rotate(360deg);
+opacity:0;
+}
+}
+
+/* Envelope */
+#envelope-container{
+display:flex;
+flex-direction:column;
+align-items:center;
+cursor:pointer;
+transition:.5s;
+}
+
+.envelope{
+position:relative;
+width:300px;
+height:200px;
+background:var(--pink);
+border-radius:0 0 10px 10px;
+box-shadow:0 20px 40px rgba(0,0,0,.1);
+}
+
+.envelope:before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+z-index:2;
+border-top:130px solid var(--dark-pink);
+border-left:150px solid transparent;
+border-right:150px solid transparent;
+transform-origin:top;
+transition:.5s ease-in-out;
+}
+
+.open .envelope:before{
+transform:rotateX(180deg);
+z-index:0;
+}
+
+.heart-seal{
+position:absolute;
+top:40%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:50px;
+z-index:3;
+animation:heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat{
+0%,100%{transform:translate(-50%,-50%) scale(1)}
+15%{transform:translate(-50%,-50%) scale(1.1)}
+30%{transform:translate(-50%,-50%) scale(1)}
+}
+
+/* Main */
+#main-content{
+display:none;
+max-width:650px;
+width:100%;
+background:rgba(255,255,255,.88);
+backdrop-filter:blur(10px);
+padding:40px;
+border-radius:30px;
+box-shadow:0 20px 60px rgba(0,0,0,.1);
+text-align:center;
+margin:20px auto;
+border:2px solid white;
+animation:fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp{
+from{
+opacity:0;
+transform:translateY(50px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* Photo */
+.photo-frame{
+background:white;
+padding:15px 15px 40px;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+transform:rotate(-2deg);
+margin-bottom:30px;
+display:inline-block;
+transition:.5s;
+}
+
+.photo-frame:hover{
+transform:rotate(0deg) scale(1.05);
+}
+
+.couple-img{
+width:100%;
+max-width:400px;
+display:block;
+border:1px solid #eee;
+}
+
+h1{
+font-family:'Dancing Script',cursive;
+color:var(--dark-pink);
+font-size:2.5rem;
+margin-bottom:20px;
+}
+
+.letter-text{
+font-family:'Indie Flower',cursive;
+font-size:1.25rem;
+line-height:1.8;
+color:#444;
+text-align:left;
+}
+
+.highlight{
+color:var(--dark-pink);
+font-weight:bold;
+background:rgba(255,133,161,.1);
+padding:2px 5px;
+border-radius:5px;
+}
+
+.glow{
+color:var(--dark-pink);
+text-shadow:0 0 10px rgba(255,77,109,.4);
+font-weight:bold;
+}
+
+/* Proposal */
+.proposal{
+margin-top:50px;
+padding-top:30px;
+border-top:2px dashed var(--pink);
+}
+
+.forever{
+font-family:'Dancing Script',cursive;
+font-size:3rem;
+color:var(--dark-pink);
+animation:glowPulse 2s infinite;
+}
+
+@keyframes glowPulse{
+0%{text-shadow:0 0 5px var(--pink)}
+50%{
+text-shadow:0 0 25px var(--dark-pink),
+0 0 10px var(--gold);
+}
+100%{text-shadow:0 0 5px var(--pink)}
+}
+
+.btn-music{
+position:fixed;
+bottom:20px;
+right:20px;
+background:white;
+border:none;
+padding:12px;
+border-radius:50%;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+cursor:pointer;
+z-index:2000;
+font-size:20px;
+}
+
+/* Mobile */
+@media(max-width:600px){
+
+body{
+padding:10px;
+}
+
+.envelope{
+width:280px;
+height:180px;
+}
+
+.envelope:before{
+border-top-width:115px;
+border-left-width:140px;
+border-right-width:140px;
+}
+
+#main-content{
+width:100%;
+padding:25px 18px;
+margin:10px auto;
+}
+
+.letter-text{
+font-size:1.1rem;
+}
+
+h1{
+font-size:2rem;
+}
+
+.forever{
+font-size:2.4rem;
+}
+
+.couple-img{
+max-width:100%;
+}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Music -->
+<audio id="bgMusic" loop>
+<source src="https://www.chosic.com/wp-content/uploads/2021/07/Rainy-Day-Romantic-Piano.mp3" type="audio/mpeg">
+</audio>
+
+<div id="sakura-container"></div>
+
+<!-- Envelope -->
+<div id="envelope-container" onclick="openLetter()">
+
+<div class="envelope">
+<div class="heart-seal">❤️</div>
+</div>
+
+<p style="
+font-family:'Dancing Script';
+font-size:1.8rem;
+color:var(--dark-pink);
+margin-top:20px;
+">
+Tap to Open, Meri Jaan 💌
+</p>
+
+</div>
+
+<!-- Letter -->
+<div id="main-content">
+
+<div class="photo-frame">
+
+<img
+src="https://files.catbox.moe/at9qj2.jpg"
+alt="Our Love"
+class="couple-img"
+>
+
+<p style="
+font-family:'Dancing Script';
+margin-top:10px;
+color:#888;
+">
+Our Anime Love Story ✨
+</p>
+
+</div>
+
+<h1 id="typewriter-intro"></h1>
+
+<div class="letter-text">
+
+<p>Sometimes I wonder… 🤍</p>
+
+<p>
+Agar meri life ek anime ki tarah likhi hoti,
+to sabse beautiful scene woh hota jab writer ne
+<span class="highlight">tomake (you)</span>
+meri story mein add kiya 💖📖
+</p>
+
+<p>
+Us din se meri duniya pura change hoye geche…
+aur honestly, everything started feeling different 🌍✨
+</p>
+
+<p>
+Na mujhe superpowers mile ⚡,
+na main koi strongest anime hero bana 🗡️.
+But I found you…
+aur mere liye wahi meri sabse badi jeet hai ❤️🏆
+</p>
+
+<p>
+Main tumhe aise pyaar nahi karta jaise log kuch mahino ke liye karte hain ⏳.
+Ami tomake shei vabe bhalobashi jaise koi apni
+<span class="highlight">favorite anime</span>
+se pyaar kore 🎬💞
+</p>
+
+<p>
+No matter how many times they watch it,
+har baar woh phir se dil jeet leti hai 💘✨
+</p>
+
+<p>
+Aur agar kabhi meri zindagi ke saare episodes khatam ho jaayein… 📺💔
+To meri sirf ek hi wish hogi—
+</p>
+
+<p class="glow" style="text-align:center;font-size:1.5rem;">
+"Next season starts only with you…
+tomake niyei shuru hobe." 🌸💫
+</p>
+
+<p>
+Main sirf happy moments share karna nahi chahta 😊.
+Main tumhare saath har situation jeena chahta hoon—
+jab hum thake hon 😴,
+jab hum lad jayein 😢💢,
+aur phir ek dusre ko mana kar phir se muskura dein 😊💞
+</p>
+
+<p>
+Kyuki amar kache love mane sudhu "I love you" bola na… 💌
+Love mane holo har haal mein ek sathe thaka,
+tumar pase thaka 🤝❤️
+</p>
+
+<p>
+Aur agar kabhi tum khud par doubt karo… 🌧️
+To yaad rakhna—
+Mere liye is duniya mein tumse zyada khoobsurat
+koi kahani nahi hai 🌍💖✨
+</p>
+
+<p>
+Ar seshe sudhu eta-i…
+Agar mujhe har janam mein ek wish mile,
+<span class="glow">I will always choose you</span>—
+again and again, without hesitation ♾️💞
+</p>
+
+<p>
+You are not just my girlfriend… 💕
+Tumi amar <i>favorite chapter</i> 📖✨,
+amar <i>safest place</i> 🏡💗,
+amar <i>happiest ending</i> 🎀😊,
+aur shei pyaar ja ami har universe e choose korbo 🌌❤️
+</p>
+
+<p class="glow" style="
+text-align:center;
+font-size:1.5rem;
+margin-top:20px;
+">
+I love you—aj, kal, ar har janam e…
+in every universe ♾️💖🌸✨
+</p>
+
+</div>
+
+<div class="proposal">
+
+<div class="forever">
+Forever & Always
+</div>
+
+<p>💍🌷💫❤️</p>
+
+</div>
+
+</div>
+
+<script>
+
+/* Sakura */
+function createSakura(){
+
+const container=document.getElementById("sakura-container");
+
+const petal=document.createElement("div");
+
+petal.className="sakura";
+
+const icons=["🌸","💮","✨","❤️"];
+
+petal.textContent=
+icons[Math.floor(Math.random()*icons.length)];
+
+petal.style.left=Math.random()*100+"vw";
+
+petal.style.animationDuration=
+(Math.random()*3+4)+"s";
+
+petal.style.fontSize=
+(Math.random()*10+15)+"px";
+
+container.appendChild(petal);
+
+setTimeout(()=>{
+petal.remove();
+},7000);
+
+}
+
+setInterval(createSakura,300);
+
+
+/* Open Letter */
+let opened=false;
+
+function openLetter(){
+
+if(opened) return;
+
+opened=true;
+
+const envelope=
+document.getElementById("envelope-container");
+
+const content=
+document.getElementById("main-content");
+
+const music=
+document.getElementById("bgMusic");
+
+envelope.classList.add("open");
+
+/* Music starts after user tap */
+music.volume=.5;
+
+const playPromise=music.play();
+
+if(playPromise){
+playPromise.catch(()=>{
+console.log("Music autoplay blocked by browser.");
+});
+}
+
+setTimeout(()=>{
+
+envelope.style.display="none";
+
+content.style.display="block";
+
+startTypewriter();
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+},700);
+
+}
+
+
+/* Typewriter */
+const introText=
+"My Love, Meri Jaan, Amar Priyo… ❤️🌸✨";
+
+let index=0;
+
+function startTypewriter(){
+
+const title=
+document.getElementById("typewriter-intro");
+
+title.innerHTML="";
+
+index=0;
+
+typeWriter();
+
+}
+
+function typeWriter(){
+
+const title=
+document.getElementById("typewriter-intro");
+
+if(index<introText.length){
+
+title.innerHTML+=introText.charAt(index);
+
+index++;
+
+setTimeout(typeWriter,90);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
